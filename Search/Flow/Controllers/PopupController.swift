@@ -76,7 +76,7 @@ extension PopupController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let searchName = dataSource?[indexPath.row] else { return }
         DispatchQueue.main.async {
-            self.configuration?.delegate?.selectedHistory(name: historyName,
+            self.configuration?.delegate?.selectedHistory(name: searchName,
                                                           dataSource: DataModel.shared.getResultBySearchName(searchName))
             self.closeButoonPressed()
         }
